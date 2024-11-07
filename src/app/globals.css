@@ -1,0 +1,143 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Fuente de Google Fonts */
+@import url("https://fonts.googleapis.com/css2?family=Source+Serif+Pro:wght@400;600&display=swap");
+@import url("https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css"); /* FontAwesome para íconos */
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Source Serif Pro", serif;
+  background: linear-gradient(to bottom, #ffffff, #8dcef2);
+  color: #333;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+.App {
+  text-align: center;
+  /* Eliminamos el padding */
+}
+
+header {
+  display: flex;
+  justify-content: space-between;
+  padding: 20px;
+}
+
+.logo {
+  display: flex;
+  align-items: center;
+}
+
+.logo-image {
+  width: 40px; /* Ajusta el tamaño según lo necesites */
+  margin-right: 10px;
+}
+
+.logo span {
+  font-size: 2rem; /* Aumentamos el tamaño de la fuente */
+  font-weight: 500; /* Menos bold */
+  color: #333; /* Color negro para el texto del logo */
+}
+
+nav ul {
+  display: flex;
+  list-style: none;
+}
+
+nav ul li {
+  margin-left: 20px;
+}
+
+nav ul li a {
+  text-decoration: none;
+  color: #333;
+  font-size: 1rem;
+}
+
+h1 {
+  font-size: 3rem;
+  color: #333;
+  font-weight: 400; /* Texto normal para la pregunta */
+}
+
+h1 .bold {
+  font-weight: 600; /* Negrita solo para 'rentable' y 'inmueble' */
+}
+
+.input-container {
+  margin-top: 20px;
+}
+
+input[type="text"] {
+  padding: 10px;
+  width: 300px;
+  border-radius: 5px;
+  border: 1px solid #ccc;
+}
+
+button {
+  font-family: "Source Serif Pro", serif;
+  padding: 10px 20px;
+  margin-left: 10px;
+  background-color: #1e88e5;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+button:hover {
+  /* background-color: #1565C0; */
+  transform: translateY(
+    -2px
+  ); /* Pequeño efecto de levantamiento al hacer hover */
+}
+
+/* Footer sin fondo */
+footer {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  padding: 10px 0;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 0.8rem;
+  color: #333;
+}
+
+footer p {
+  margin-left: 20px;
+}
+
+.socials {
+  margin-right: 20px;
+  display: flex;
+}
+
+.socials a {
+  margin: 0 10px;
+  color: #333;
+  font-size: 1.5rem;
+}
+
+.socials a:hover {
+  color: #1e88e5;
+}
+
+.home-container {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 40px 40px;
+}
