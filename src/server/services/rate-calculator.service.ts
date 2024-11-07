@@ -4,21 +4,21 @@ const itp = {
 
 const calculateRates = (data: IdealistaResponse): InvertiaResponse => {
   // Lógica y cálculo de ratios
-  var is_new = false;
-  var province = data.province;
+  let is_new = false;
+  let province = data.province;
 
   // C O S T E S   I N I C I A L E S  //
   // Costes compraventa
-  var price = data.price;
-  var impuestos = price * itp.valencia; // may vary between 6%-11% depending on province and age
-  var notaria_registro = 3000;
-  var honorarios_inmobiliaria = price * 0.01;
-  var costes_totales_iniciales =
+  let price = data.price;
+  let impuestos = price * itp.valencia; // may lety between 6%-11% depending on province and age
+  let notaria_registro = 3000;
+  let honorarios_inmobiliaria = price * 0.01;
+  let costes_totales_iniciales =
     price + impuestos + notaria_registro + honorarios_inmobiliaria;
 
   // Costes acondicionamiento
-  var state = 4; // ---> ESTIMAR CON IA
-  var reforma =
+  let state = 4; // ---> ESTIMAR CON IA
+  let reforma =
     state == 1
       ? 70000
       : state == 2
@@ -28,27 +28,27 @@ const calculateRates = (data: IdealistaResponse): InvertiaResponse => {
       : state == 4
       ? 8000
       : 0;
-  var mobiliario_decoracion = state == 5 ? 150 : state == 4 ? 800 : 1600;
-  var otros = 200;
+  let mobiliario_decoracion = state == 5 ? 150 : state == 4 ? 800 : 1600;
+  let otros = 200;
 
   // C O S T E S   M E N S U A L E S  //
-  var ibi = (price * 0.08) / 12;
-  // var basuras
-  // var seguro_hogar
-  // var comunidad
-  // var suministros
-  // var reparaciones
-  var costes_totales_mensuales = ibi;
+  let ibi = (price * 0.08) / 12;
+  // let basuras
+  // let seguro_hogar
+  // let comunidad
+  // let suministros
+  // let reparaciones
+  let costes_totales_mensuales = ibi;
 
   // H I P O T E C A  //
-  var cuota = 680;
+  let cuota = 680;
 
   // I N G R E S O S   M E N S U A L E S  //
-  var alquiler = price * 1; // ---> ESTIMAR CON IA
+  let alquiler = price * 1; // ---> ESTIMAR CON IA
 
   // R A T I O S   F I N A N C I E R O S  //
-  var rentabilidad_bruta = (alquiler * 12) / price;
-  var rentabilidad_neta =
+  let rentabilidad_bruta = (alquiler * 12) / price;
+  let rentabilidad_neta =
     (alquiler * 12 - costes_totales_mensuales * 12) / costes_totales_iniciales;
 
   // Devolvemos la información + los ratios calculado por Invertia
